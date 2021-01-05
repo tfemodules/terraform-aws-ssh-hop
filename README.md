@@ -18,9 +18,10 @@ Instance OS level configurations
   - The AWS CLI will be configured to use as default the region where the instance is placed.
   - An alias `tfeip` will be set up which will use the AWS CLI to retrieve the IP Address of the instances from the provided `tfe_asg_group`. Under normal circumstances should return a single IP Address.
 
-## Usage
+## Requirements
 
-For instructions on how to run Terraform configuration refer to the root module [readme](../README.md#Usage).
+* Terraform >= 0.13
+* AWS provider ~> 3.0
 
 ## Input Variables
 
