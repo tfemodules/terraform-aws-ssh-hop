@@ -46,3 +46,26 @@ The outputs declared by the module are described in the table bellow.
 | -------- | ---- | ----------- |
 | public_ip | `string` | Public IP of the EC2 instance. |
 | public_dns | `string` | Public DNS of the EC2 instance. |
+
+## Example
+
+An example of how the module can be used.
+
+```hcl
+module "ssh_hop" {
+  source = "git::https://github.com/tfemodules/terraform-aws-ssh-hop.git"
+
+  vpc_id              = "vpc-xxxxx"
+  subnet_id           = "sub-xxxxxxxxxx"
+  allow_ingress_cidrs = ["0.0.0.0/0"]
+  key_name            = "aws-keypair-name"
+  name_prefix         = "tfe-"
+  ssh_private_keys    = {
+    my-ssh-key = "ssh_key_string"
+  }
+  tfe_asg_group       = "tfe_asg_name"
+  common_tags         = {
+    project = "tfe"
+  }
+} 
+```

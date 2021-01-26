@@ -35,6 +35,7 @@ variable "ssh_private_keys" {
   type        = map(string)
   description = "A map of strings where the values contain private ssh keys to add to the Ubuntu user on the EC2 instance. File names are based on the map keys."
   default     = {}
+  sensitive   = true
 }
 
 variable "tfe_asg_group" {
