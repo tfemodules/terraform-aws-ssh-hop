@@ -29,7 +29,7 @@ resource "aws_security_group_rule" "allow_ssh" {
   from_port         = 22
   to_port           = 22
   protocol          = "tcp"
-  cidr_blocks       = coalescelist(var.allow_ingress_cirds, ["0.0.0.0/0"])
+  cidr_blocks       = coalescelist(var.allow_ingress_cidrs, ["0.0.0.0/0"])
   security_group_id = aws_security_group.ssh_hop.id
 }
 

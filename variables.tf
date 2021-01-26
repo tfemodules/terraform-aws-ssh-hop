@@ -8,7 +8,7 @@ variable "vpc_id" {
   description = "The Id of the VPC in which the subnet is placed."
 }
 
-variable "allow_ingress_cirds" {
+variable "allow_ingress_cidrs" {
   type        = list(string)
   description = "List of CIDRs from which incoming SSH connections are allowed. If the list is empty 0.0.0.0/0 will be used."
   default     = []
